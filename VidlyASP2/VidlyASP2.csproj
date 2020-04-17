@@ -219,6 +219,14 @@
     <Compile Include="Migrations\202004140803586_AddDataAnnotationsToMovieAndGenre.Designer.cs">
       <DependentUpon>202004140803586_AddDataAnnotationsToMovieAndGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004171327070_AddGenreIdToMovieClass.cs" />
+    <Compile Include="Migrations\202004171327070_AddGenreIdToMovieClass.Designer.cs">
+      <DependentUpon>202004171327070_AddGenreIdToMovieClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004171356277_ChangeRequiedAtributsInMovie.cs" />
+    <Compile Include="Migrations\202004171356277_ChangeRequiedAtributsInMovie.Designer.cs">
+      <DependentUpon>202004171356277_ChangeRequiedAtributsInMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -347,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004140803586_AddDataAnnotationsToMovieAndGenre.resx">
       <DependentUpon>202004140803586_AddDataAnnotationsToMovieAndGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171327070_AddGenreIdToMovieClass.resx">
+      <DependentUpon>202004171327070_AddGenreIdToMovieClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171356277_ChangeRequiedAtributsInMovie.resx">
+      <DependentUpon>202004171356277_ChangeRequiedAtributsInMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
