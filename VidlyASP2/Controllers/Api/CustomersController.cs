@@ -25,16 +25,16 @@ namespace VidlyASP2.Controllers.Api
             return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
         }
 
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.FirstOrDefault(c => c.Id == id);
 
             if (customer==null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
 
-            return Mapper.Map<Customer,CustomerDto>(customer);
+            return Ok(Mapper.Map<Customer,CustomerDto>(customer));
         }
 
         [HttpPost]
