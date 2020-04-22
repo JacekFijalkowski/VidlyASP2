@@ -22,6 +22,16 @@ namespace VidlyASP2.Models
         public byte GenreId { get; set; }
         public DateTime ReleaseDate { get; set; }
         public DateTime DateAdded { get; set; }
+
+        [Range(1,20)]
+        [Display(Name = "Number in Stock")]
         public int InStock { get; set; }
+
+        public Movie()
+        {
+            Id = 0;
+            ReleaseDate = DateTime.Today;
+        }
+
     }
 }
