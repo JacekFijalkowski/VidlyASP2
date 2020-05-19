@@ -25,6 +25,8 @@ namespace VidlyASP2.Dtos
         [Range(1,20)]
         public int InStock { get; set; }
 
+        public GenreDto Genre { get; set; }
+
         public MovieDto()
         {
             Id = 0;

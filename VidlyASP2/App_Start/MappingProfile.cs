@@ -27,6 +27,11 @@ namespace VidlyASP2.App_Start
                 .ForMember(m=>	m.Id,
                     opt => opt.Ignore());
 
+            Mapper.CreateMap<Genre, GenreDto>();
+            Mapper.CreateMap<GenreDto, Genre>()
+                .ForMember(m=>	m.Id,
+                    opt => opt.Ignore());
+
         }
     }
 }
