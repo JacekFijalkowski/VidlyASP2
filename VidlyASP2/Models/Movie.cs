@@ -27,10 +27,13 @@ namespace VidlyASP2.Models
         [Display(Name = "Number in Stock")]
         public int InStock { get; set; }
 
+        public int NumberAvailable { get; set; }
+
         public Movie()
         {
             Id = 0;
             ReleaseDate = DateTime.Today;
+            NumberAvailable = InStock;
         }
 
     }
