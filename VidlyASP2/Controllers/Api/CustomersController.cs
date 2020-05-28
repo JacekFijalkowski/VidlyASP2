@@ -8,6 +8,7 @@ using System.Web.Http;
 using AutoMapper;
 using VidlyASP2.Dtos;
 using VidlyASP2.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace VidlyASP2.Controllers.Api
 {
@@ -21,12 +22,21 @@ namespace VidlyASP2.Controllers.Api
         }
 
 
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers(string query = null)
         {
-            return _context.Customers
-                .Include(c =>c.MembershipType)
+             var customersQuery = _context.Customers
+                .Include(c =>c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+            {
+                customersQuery = customersQuery.Where(c=>c.Name.Contains(query));
+            }
+
+             var cudtomersDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer,CustomerDto>);
+
+            return cudtomersDtos;
         }
 
         public IHttpActionResult GetCustomer(int id)
